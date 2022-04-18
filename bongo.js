@@ -97,10 +97,9 @@ function preload() {
     blueArray = new Array(36);
     purpleArray = new Array(36);
 
-    purpleArray2 = new Array(24);
-    blueArray2 = new Array(48);
+    purpleArray2 = new Array(18);
+    blueArray2 = new Array(36);
 
-    //PurpleBalls = new PurpleBall(880, 180, 80);
     
     //sonidos
     bongoMoradoSonido = app.loadSound(path+'sounds/soundBongoMorado.mp3');
@@ -121,8 +120,6 @@ function preload() {
     counter1 = 0;
     counter2 = 0;
 
-    //estados
-    //state = 1;
 }
 
 function setup(){
@@ -158,14 +155,14 @@ function draw(){
                 //para crear 36 pelotas moradas
                 for(let i = 0; i < purpleArray.length; i++){
                     newPurplePosX = purplePosX + defaultPosX* i
-                    purpleArray[i] = new PurpleBall(newPurplePosX, 262);
+                    purpleArray[i] = new PurpleBall(newPurplePosX, 272);//262
                     purpleArray[i].draw();
                     
                 }
 
                 for(let a = 0; a < blueArray.length; a++){
                     let newBluePosX = bluePosX + defaultPosX* a
-                    blueArray[a] = new BlueBall(newBluePosX, 180);
+                    blueArray[a] = new BlueBall(newBluePosX, 200); //180
                     blueArray[a].draw();
 
                 }
@@ -180,7 +177,7 @@ function draw(){
                         purplePosX -=3;
                         bluePosX -=3;
 
-                }}, 10000);
+                }}, 3000);
 
                 if(keyIsDown(81)){
                     console.log("lista la q");
@@ -270,10 +267,10 @@ function draw(){
                         bluePosX2 = -10000;
                     
                     }else{
-                        purplePosX -=3;
-                        bluePosX2 -=3;
+                        purplePosX -=4;
+                        bluePosX2 -=4;
                 
-                }}, 10000);
+                }}, 5000);
 
                 if(keyIsDown(81)){
                     //console.log("lista la q");
@@ -327,7 +324,7 @@ function draw(){
 
                 break;
     }
-    text('X:'+mouseX+ 'Y:'+mouseY, mouseX, mouseY);
+    
 }
 
 function moves(){
